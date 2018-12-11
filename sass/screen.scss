@@ -1,0 +1,560 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3/transform";
+@import "compass/css3";
+@import "compass/reset";
+@import "fonts";
+
+
+
+@-webkit-keyframes hustle {
+  0%   { @include transform(scale(1,1));}
+  50%  { @include transform(scale(1.2,1.2));}
+  100% { @include transform(scale(1,1));}
+}
+@-moz-keyframes hustle {
+	0%   { @include transform(scale(1,1));}
+	50%  { @include transform(scale(1.2,1.2));}
+	100% { @include transform(scale(1,1));}
+}
+@-o-keyframes hustle {
+	0%   { @include transform(scale(1,1));}
+	50%  { @include transform(scale(1.2,1.2));}
+	100% { @include transform(scale(1,1));}
+}
+@keyframes hustle {
+	0%   { @include transform(scale(1,1));}
+	50%  { @include transform(scale(1.2,1.2));}
+	100% { @include transform(scale(1,1));}
+}
+
+div.container{
+	width: 640px;
+	height: 1136px;
+	
+	
+
+
+}
+
+span.logo-bell{
+	background: url(../img/bell_logo-a.png) no-repeat transparent scroll;
+	background-size: 92px 129px;
+	width: 92px;
+	height: 129px;
+	display: block;
+	position: absolute;
+	z-index: 2000;
+	left: 50%;
+	top: 50%;
+	margin-left: -46px;
+	margin-top: -54px;
+	opacity: 1;
+	@include transition(.2 all ease-in-out);
+	@include transform(scale(1.5,1.5));
+	opacity: 0;
+	&:after{
+		content: "";
+		display: block;
+		position: absolute;
+		left: -72px;
+		opacity: 1;
+		top: -74px;
+		width: 235px;
+		height: 235px;
+		background: url(../img/bell-pop.png) no-repeat transparent;
+		background-size: 235px 235px;
+		@include transform(scale(0,0));
+		opacity: 0;
+		@include transition(.3s all ease-in-out);
+	}
+
+	&.pop:after{
+		@include transform(scale(1,1));
+		opacity: 1;
+		@include transition(.3s all ease-in-out);
+	}
+}
+
+
+span.logo-wire{
+	background: url(../img/wire-logo-a.png) no-repeat transparent scroll;
+	background-size: 92px 129px;
+	width: 92px;
+	display: block;
+	height: 129px;
+	position: absolute;
+	z-index: 1000;
+	left: 50%;
+	top: 50%;
+	margin-left: -46px;
+	margin-top: -54px;
+	opacity: 0;
+	@include transition(.2 all ease-in-out);
+	@include transform(scale(.5,.5));
+}
+
+
+span.progress{
+	height: 1px;
+	width: 104px;
+	position: absolute;
+	display: block;
+	left: 50%;
+	bottom: -60px;
+	margin-left: -52px;
+	background-color: rgba(0, 0, 0, .1);
+	opacity: 0;
+	z-index: 2000;
+	
+	&:after{
+		display: block;
+		content: "";
+
+		height: 1px;
+		width: 0px;
+		position: absolute;
+		display: block;
+		bottom: 0px;
+		background-color: rgba(0,0,0,1);
+		left: 0px;
+	}
+
+
+	&.go{
+		&:after{
+		@include transition(1s all cubic-bezier(0.755, 0.05, 0.855, 0.06));
+		width: 104px;
+		}
+	}
+
+	&.go.color:after{
+		background-color: #7ab61d;
+		@include transition(.2s all cubic-bezier(0.755, 0.05, 0.855, 0.06));
+
+	}
+}
+
+
+div.ring-1{
+	display: block;
+	width: 550px;
+	height: 550px;
+	background: url(../img/ring.png) no-repeat transparent scroll;
+	background-size: 550px 550px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -275px;
+	margin-top: -275px;
+//	@include transform(scale(.5,.5));
+	@include transform(scale(0,0));
+	
+
+}
+
+
+
+div.ring-2{
+	display: block;
+	width: 550px;
+	height: 550px;
+	background: url(../img/ring.png) no-repeat transparent scroll;
+	background-size: 550px 550px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -275px;
+	margin-top: -275px;
+//	@include transform(scale(.8,.8));
+	@include transform(scale(0,0));
+
+
+}
+
+
+
+div.ring-3{
+	display: block;
+	width: 550px;
+	height: 550px;
+	background: url(../img/ring.png) no-repeat transparent scroll;
+	background-size: 550px 550px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -275px;
+	margin-top: -275px;
+//	@include transform(scale(1,1));
+	@include transform(scale(0,0));
+
+
+}
+
+
+div.container{
+	height: 640px;
+	width: 320px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+section.view-1{
+	height: 640px;
+	width: 320px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -160px;
+	margin-top: -370px;
+	@include transition(1s all ease-in-out);
+	
+
+}
+
+
+
+
+div.messages-listing-container{
+	opacity: 0;
+	width: 51px;
+	height: 51px;
+	
+	border-radius: 150px;
+	background-color: transparent;
+	position: absolute;
+	bottom: 120px;
+	z-index: 1000;
+	right: 20px;
+	overflow: hidden;
+	border: 4px solid rgba(255,255,255,1);
+	box-shadow: 0 0 5px rgba(0,0,0,.2);
+	@include transform(translateX(-115px)translateY(-165px));
+	@include transition(.5s all ease-in-out);
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	&.go{
+		@include transform(translateX(0)translateY(0));
+		opacity: 1;
+	}
+	div.messages{
+		background: url(../img/message-listing.png) no-repeat center center transparent;
+		width: 640px;
+		height: 1280px;
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -320px;
+		margin-top: -640px;
+		@include transform(scale(.1,.1));
+	
+	}
+
+	
+	
+}	
+
+div.notification-container{
+	display: block;
+	position: absolute;
+	right: 15px;
+	z-index: 2000;
+	bottom: 156px;
+	width: 25px;
+	height: 25px;
+	background: url(../img/notification-container.png) no-repeat transparent scroll;
+	background-size: 25px 25px;
+	opacity: 0;
+	@include transform(scale(2,2));
+	@include transition(.3s all ease-in-out);
+	span{
+		font-family: 'proxima_nova_rgbold';
+		font-size: 10px;
+		color: rgba(255,255,255,1);
+		margin-left: 10px;
+		margin-top: 7px;
+		display: block;
+	}
+	&.go{
+		@include transform(scale(1,1));
+		@include transition(.3s all ease-in-out);
+		opacity: 1;
+		&.bump{
+			@include transition(.5s all ease-in-out);
+			-webkit-animation: .2s hustle linear;
+		}
+	}
+	
+}
+
+div.map-listing{
+	opacity: 0;
+	width: 102px;
+	height: 102px;
+	background: url(../img/map.png) no-repeat transparent scroll;
+	background-size: 102px 102px;
+	position: absolute;
+	right: 10px;
+	top: 138px;
+	@include transform(translateX(-90px)translateY(100px));
+	@include transition(.5s all ease-in-out);
+	&.go{
+		@include transform(translateX(0)translateY(0));
+		opacity: 1;
+	}
+}
+
+div.alcatel-listing{
+	opacity: 0;
+	width: 80px;
+	height: 80px;
+	background: url(../img/alcatel.png) no-repeat transparent scroll;
+	background-size: 80px 80px;
+	position: absolute;
+	left: 10px;
+	top: 90px;
+	@include transform(translateX(113px)translateY(180px));
+	@include transition(.5s all ease-in-out);
+	&.go{
+		@include transform(translateX(0)translateY(0));
+		opacity: 1;
+	}
+}
+
+
+div.file-listing{
+	opacity: 0;
+	width: 45px;
+	height: 45px;
+	background: url(../img/file-listing.png) no-repeat transparent scroll;
+	background-size: 45px 45px;
+	position: absolute;
+	left: 20px;
+	bottom: 30px;
+	@include transform(translateX(113px)translateY(-250px));
+	@include transition(.5s all ease-in-out);
+	&.go{
+		@include transform(translateX(0)translateY(0));
+		opacity: 1;
+	}
+}
+
+
+div.actions-listing{
+	opacity: 0;
+	width: 57px;
+	height: 57px;
+	background: url(../img/actions.png) no-repeat transparent scroll;
+	background-size: 57px 57px;
+	position: absolute;
+	left: -20px;
+	bottom: 150px;
+	@include transform(translateX(133px)translateY(-150px));
+	@include transition(.5s all ease-in-out);
+	&.go{
+		@include transform(translateX(0)translateY(0));
+		opacity: 1;
+	}
+}
+
+
+div.arrival-container{
+	display: block;
+	position: fixed;
+	
+	left: 50%;
+	top: 50%;
+	cursor: pointer;
+	margin-top: -145px;
+	margin-left: -145px;
+	width: 290px;
+	height: 290px;
+	border-radius: 320px;
+	@include transform(scale(.4,.4)translateY(-10px));	
+	overflow: hidden;	
+	z-index: 3000;
+	opacity: 0;
+	@include transition(.3s all ease-in-out);
+	&.expand{
+		width: 320px;
+		height: 640px;
+		margin-top: -320px;
+		margin-left: -160px;
+		border-radius: 0px;
+		@include transform(scale(1,1)translateY(-10px));
+		@include transition(.3s all ease-in-out);
+	}
+	
+	
+	div.arrival{
+		background-color: red;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 320px;
+		height: 640px;
+		margin-left: -160px;
+		margin-top: -266px;
+		background: url(../img/message-listing.png) no-repeat transparent scroll;
+		background-size: 320px 640px;
+	
+
+	}
+}
+
+span.profile-avatar{
+	display: block;
+	position: absolute;
+	left: 50%;
+	margin-top: -119px;
+	margin-left: -120px;
+	opacity: 1;
+	z-index: 4000;
+	top: 50%;
+	width: 238px;
+	height: 238px;
+	background: url(../img/avatar.png) no-repeat transparent;
+	background-size: 238px 238px;
+	opacity: 0;
+	@include transform(scale(.50,.50));
+}
+
+
+
+
+
+div.lines{
+	height: 640px;
+	width: 320px;
+	background: url(../img/connections.png) no-repeat transparent scroll;
+	background-size: 588px 833px;
+	background-position: -140px -120px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -160px;
+	margin-top: -320px;
+	z-index: 0;
+	opacity: 0;
+	@include transform(scale(.1,.1));
+}
+
+div.labels{
+	ul li{
+		position: absolute;
+		background-color: #8088a1;
+		border-radius: 40px;
+		width: 80px;
+		line-height: 22px;
+		text-align: center;
+		height: 20px;
+		color: rgba(255,255,255,1);
+		display: block;
+		left: 50%;
+		top: 50%;
+		margin-left: 70px;
+		margin-top: -25px;
+		font-family: 'proxima_nova_rgbold';
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-size: 10px;
+		opacity: 0;
+		@include transform(scale(2,2));
+		@include transition(.2s all ease-in-out);
+
+		&.buddies{
+			left: -40px;
+			top: 210px;
+		}
+
+		&.map{
+			left: auto;
+			right:60px;
+			top: 270px;
+		}
+		
+		&.messages{
+			left: auto;
+			right: 60px;
+			top: 430px;
+		}
+
+		&.files{
+			left: -40px;
+			top: 540px;
+			right: auto;
+		}
+		&.actions{
+			left: -50px;
+			top: 420px;
+			right: auto;
+		}
+
+	}
+	
+}
+
+
+div.buddy-connections{
+	opacity: 0;
+	display: block;
+	width: 289px;
+	height: 187px;
+	background: url(../img/people-connections.png) no-repeat transparent top center;
+	background-size: 145px 99px;
+	position: absolute;
+	top: 10px;
+	left: -120px;
+	@include transform(scale(.5,.5));
+	z-index:0;
+}
+
+
+
+div.message-connections{
+	opacity: 0;
+	display: block;
+	width: 289px;
+	height: 187px;
+	background: url(../img/message-connections.png) no-repeat transparent top center;
+	background-size: 145px 99px;
+	position: absolute;
+	bottom: 80px;
+	right: -110px;
+	@include transform(scale(.6,.6)rotate(75deg));
+	z-index:0;
+	&:before{
+		content: "";
+		display: block;
+		background: url(../img/chat-head-1.png) no-repeat transparent scroll;
+		background-size: 35px 35px;
+		position: absolute;
+		left: 81px;
+		top: 54px;
+		width: 35px;
+		height: 35px;
+		@include transform(rotate(-72deg));
+	}
+
+	&:after{
+		content: "";
+		display: block;
+		background: url(../img/chat-head-2.png) no-repeat transparent scroll;
+		background-size: 35px 35px;
+		position: absolute;
+		left: 182px;
+		top: 4px;
+		width: 35px;
+		height: 35px;
+		@include transform(rotate(-72deg));
+	}
+}
+
+
+
